@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+x:Class="ToDo.Views.ToDoItemPage"
+Title="{Binding Name}" NavigationPage.HasNavigationBar="false" BackgroundColor="#cfe2f3" BackgroundImageSource="Background">
+
+    <StackLayout Margin="15,0,15,0" VerticalOptions="StartAndExpand" BackgroundColor="White">
+        <Frame BackgroundColor="#cfe2f3" Margin="0,0,0,20">
+            <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="30" TextColor="#0c343d" VerticalTextAlignment="Center" HorizontalOptions="Center"></Label>
+        </Frame>
+
+        <StackLayout Orientation="Vertical" Margin="15,0,10,10">
+            <Label Text="Name:" TextColor="#0c343d" FontSize="20" VerticalTextAlignment="Center"/>
+            <Entry Text="{Binding Name}" TextColor="Black" HorizontalOptions="FillAndExpand" FontSize="20" BackgroundColor="#f0f8fa"/>
+        </StackLayout>
+
+        <StackLayout Margin="15,0,10,10">
+            <Label Text="Notes:" TextColor="#0c343d" FontSize="20" VerticalTextAlignment="Center"/>
+            <Entry Text="{Binding Notes}" TextColor="Black" FontSize="20" BackgroundColor="#f0f8fa"/>
+        </StackLayout>
+
+        <StackLayout Orientation="Vertical" Margin="15,0,10,10">
+            <Label Text="Status:" TextColor="#0c343d" FontSize="20" VerticalTextAlignment="Center"/>
+            <Switch IsToggled="{Binding Done}" HorizontalOptions="FillAndExpand" BackgroundColor="#f0f8fa"/>
+        </StackLayout>
+        
+        <!--<Line X1="400" Y1="0" X2="0" Y2="0" Stroke="Black" StrokeThickness="10" HorizontalOptions="FillAndExpand"/>
+        -->
+
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Save" Clicked="OnSaveClicked" CornerRadius="15" Margin="40,20,40,5" BackgroundColor="#b7e3a3" TextColor="#0c343d" FontSize="20" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Delete" Clicked="OnDeleteClicked" CornerRadius="15" Margin="50,0,50,5" BackgroundColor="#fcd4d4" TextColor="#0c343d" FontSize="20" HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+        <Button Text="Cancel" Clicked="OnCancelClicked" CornerRadius="15" Margin="60,0,60,0" BackgroundColor="#abd5de" TextColor="#0c343d" FontSize="20"/>
+
+        <BoxView BackgroundColor="White"></BoxView>
+    </StackLayout>
+</ContentPage>

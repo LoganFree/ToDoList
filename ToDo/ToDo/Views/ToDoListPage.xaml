@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+x:Class="ToDo.Views.ToDoListPage"
+NavigationPage.HasNavigationBar="false" BackgroundColor="White">
+
+    <StackLayout>
+
+        <Image Source="Title.png"></Image>
+
+        <ListView x:Name="listView" Margin="20,20,20,20" ItemSelected="OnListItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Margin="0,0,10,10" Spacing="20" BackgroundColor="#f0f8fa">
+
+                            <Image Margin="0,7,0,7" Source="check.png" HorizontalOptions="End" IsVisible="{Binding Done}"/>
+
+                            <Line Margin="0,20,0,0"  X1="175" Y1="0" X2="0" Y2="0" Stroke="#6aa84f" StrokeThickness="4" HorizontalOptions="FillAndExpand" IsVisible="{Binding Done}"/>
+
+                            <Label Margin="0,5,0,0" FontAttributes="Bold" Text="{Binding Name}" FontSize="20" TextColor="#0c343d" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
+
+                            <!--<BoxView MinimumHeightRequest="1" MinimumWidthRequest="20" BackgroundColor="Black"></BoxView>
+                                -->
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button Text="+" TextColor="#0c343d" FontSize="50" CornerRadius="15" BackgroundColor="#b7e3a3" Margin="0,0,20,20" Clicked="OnItemAdded" HorizontalOptions="End"></Button>
+
+    </StackLayout>
+</ContentPage>
